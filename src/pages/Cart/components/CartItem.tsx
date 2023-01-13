@@ -4,38 +4,20 @@
 /* eslint-disable import/order */
 import { FC } from 'react';
 import { CartProducts } from '../../../redux/cart/cart.types';
-import { TrashIcon } from '@heroicons/react/outline';
-import useActions from '../../../redux/hooks/useActions';
 import RemoveFromCartBtn from './RemoveFromCartBtn';
 import '../cart.css';
 import { useThemeHook } from '../../../ThemeContext/ThemeProvider';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/Language/store';
 import { translate } from '../../../i18n';
+import Modal from './Modal';
+import AddToCartBtn from './AddToCartBtn';
 
 // eslint-disable-next-line max-len
-const CartItem: FC<CartProducts> = ({ product: { price, thumbnail, title }, quantity, id }) => {
-  const { deleteCartItem } = useActions();
-  const { addToCartProduct } = useActions();
+const CartItem: FC<CartProducts> = ({ product: { price, thumbnail, title, rating }, quantity, id }) => {
   const [theme] = useThemeHook();
   const { language } = useSelector((state: RootState) => state.lang);
   // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  const addToCartHandler = (productId: number) => {
-    const cartProduct = {
-      id: productId,
-      quantity: 1,
-      description: '',
-      product: {
-        id: productId,
-        title,
-        price,
-        thumbnail,
-      },
-    };
-
-    addToCartProduct(cartProduct);
-  };
 
   return (
     // Top Section
@@ -71,50 +53,10 @@ const CartItem: FC<CartProducts> = ({ product: { price, thumbnail, title }, quan
                   />
                 </div>
                 <div className='col-md-2 pt-6 '>
-                  <button
-                    data-product-id={id}
-                    onClick={() => addToCartHandler(id)}
-                    className='btn btn-danger ml-10% mt-6 mr-3'
-                  >
-                    +
-                  </button>
+                  <AddToCartBtn id={id}>+</AddToCartBtn>
                 </div>
                 <div className='col-md-1 pt-12'>
-                  <button
-                    className='btn btn-danger ml-10%'
-                    data-toggle='modal'
-                    data-target='#exampleModal'
-                  >
-                    <TrashIcon className='h-6 w-6' />
-                  </button>
-                  {/* <!-- Modal --> */}
-                  <div
-                    className='modal fade'
-                    id='exampleModal'
-                    role='dialog'
-                    aria-labelledby='exampleModalLabel'
-                    aria-hidden='true'
-                  >
-                    <div className='modal-dialog' role='document'>
-                      <div className='modal-content'>
-                        <div className='modal-header'>
-                          <h5 className='modal-title' id='exampleModalLabel'>{translate('Explanation', language)}</h5>
-                          <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
-                            <span aria-hidden='true'>&times;</span>
-                          </button>
-                        </div>
-                        <div className='modal-body'>
-                          ...
-                        </div>
-                        <div className='modal-footer'>
-                          <button type='button' className='btn btn-secondary' data-dismiss='modal' onClick={() => deleteCartItem(id)}>
-                            <TrashIcon className='h-6 w-6' />
-                          </button>
-                          <button type='button' className='btn btn-primary'>{translate('Add to Favorites', language)}</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <Modal id={id} title={title} price={price} thumbnail={thumbnail} rating={rating} />
                 </div>
               </div>
             </div>
