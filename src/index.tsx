@@ -4,11 +4,11 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './redux';
 import './index.css';
-import './custom.scss';
+import './module.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './ThemeContext/ThemeProvider';
-import 'bootstrap/dist/css/bootstrap.css';
+import { FilterProvider } from './FilterContext/filter_context';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -16,9 +16,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <ThemeProvider>
     <Provider store={store}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <FilterProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </FilterProvider>
     </Provider>
   </ThemeProvider>,
 );
