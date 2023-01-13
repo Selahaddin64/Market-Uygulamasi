@@ -22,6 +22,7 @@
     "rating (highest)": "değerlendirme (artan)",
     "products found": "ürün bulundu",
     "Cart" : "Sepet",
-    "Add to Favorites": "Favorilere Ekle",
-    "Explanation": "Açıklama"
+    "Delete and add to favorites": "Sil ve Favorilere Ekle",
+    "Explanation": "Açıklama",
+    "Are you sure you want to delete?": "Silmek istediğinize emin misiniz?"
   }

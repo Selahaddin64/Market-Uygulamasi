@@ -22,6 +22,7 @@
     "rating (highest)": "rating (highest)",
     "products found": "products found",
     "Cart" : "Cart",
-    "Add to Favorites": "Add to Favorites",
-    "Explanation": "Explanation"
+    "Delete and add to favorites": "Delete and add to favorites",
+    "Explanation": "Explanation",
+    "Are you sure you want to delete?": "Are you sure you want to delete?"
   }

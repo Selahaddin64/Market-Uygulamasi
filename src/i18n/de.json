@@ -22,6 +22,7 @@
     "rating (highest)": "bewertung (höchste)",
     "products found": "produkte gefunden",
     "Cart" : "Wagen",
-    "Add to Favorites": "Zu den Favoriten hinzufügen",
-    "Explanation": "Erläuterung"
+    "Delete and add to favorites": "Löschen und zu Favoriten hinzufügen",
+    "Explanation": "Erläuterung",
+    "Are you sure you want to delete?": "Sind Sie sicher, dass Sie löschen möchten?"
   }
