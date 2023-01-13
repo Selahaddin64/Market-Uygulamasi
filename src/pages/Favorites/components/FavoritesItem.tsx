@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-lone-blocks */
 import { FC } from 'react';
-import { ShoppingCartIcon, StarIcon } from '@heroicons/react/outline';
+import { ShoppingCartIcon, StarIcon, TrashIcon } from '@heroicons/react/outline';
 import useActions from '../../../redux/hooks/useActions';
 import '../favorites.css';
 import { addToCartProduct } from '../../../redux/cart/cart.slice';
@@ -13,7 +13,7 @@ import { formatCurrency } from '../../../utilities/formatCurrency';
 import { FavProducts } from '../../../redux/Favorites/favorites.types';
 
 const FavoritesItem: FC<FavProducts> = ({ product: { price, thumbnail, title, rating }, id }) => {
-  const { removeFromLiked } = useActions();
+  const { removeFromFavorited } = useActions();
   const [theme] = useThemeHook();
 
   const addToCartHandler = (productId: number) => {
@@ -61,10 +61,10 @@ const FavoritesItem: FC<FavProducts> = ({ product: { price, thumbnail, title, ra
           <div>
             <button
               className='btn btn-danger ml-10%'
-              onClick={() => removeFromLiked(id)}
-              onKeyDown={() => removeFromLiked(id)}
+              onClick={() => removeFromFavorited(id)}
+              onKeyDown={() => removeFromFavorited(id)}
             >
-              Remove Item
+              <TrashIcon className='h-6 w-6' />
             </button>
           </div>
         </div>
