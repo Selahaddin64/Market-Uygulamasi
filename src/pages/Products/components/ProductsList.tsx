@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import { Product } from '../../../redux/products/product.types';
 import ProductItem from './ProductsItem';
-import '../products.css';
+import '../products.module.scss';
 
 interface ProductsListProps {
   products: Product[] | undefined;

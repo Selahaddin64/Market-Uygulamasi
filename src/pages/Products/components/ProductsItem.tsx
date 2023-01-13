@@ -2,7 +2,7 @@
 import { FC } from 'react';
 import { HeartIcon, ShoppingCartIcon, StarIcon } from '@heroicons/react/outline';
 import { Product } from '../../../redux/products/product.types';
-import '../products.css';
+import '../products.module.scss';
 import useActions from '../../../redux/hooks/useActions';
 import { formatCurrency } from '../../../utilities/formatCurrency';
 import { useDispatch } from 'react-redux';
