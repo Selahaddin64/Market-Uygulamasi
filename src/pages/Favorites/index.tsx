@@ -1,26 +1,28 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { translate } from '../../i18n';
-import { useCartProductsSelector } from '../../redux/Favorites/likedSlice';
+import { useCartProductsSelector } from '../../redux/Favorites/favoritedSlice';
 import useActions from '../../redux/hooks/useActions';
 import { RootState } from '../../redux/Language/store';
+import { useThemeHook } from '../../ThemeContext/ThemeProvider';
 import Favorites from './components/Favorites';
 
 const FavoritesPage = () => {
   const [isSubmitOrder, setIsSubmitOrder] = useState(false);
-  const { clearLike } = useActions();
+  const { clearFavorites } = useActions();
   const items = useCartProductsSelector();
   const { language } = useSelector((state: RootState) => state.lang);
+  const [theme] = useThemeHook();
 
   useEffect(() => {
     if (isSubmitOrder) {
-      clearLike();
+      clearFavorites();
     }
-  }, [clearLike, isSubmitOrder]);
+  }, [clearFavorites, isSubmitOrder]);
 
   return (
-    <div className='cart-page'>
-      <h1>{translate('Favorites', language)}</h1>
+    <div>
+      <h1 className={`${theme ? 'text-light my-5' : 'text-black my-5'} pt-16 text-center`}>{translate('Favorites', language)}</h1>
       {!isSubmitOrder ? (
         <Favorites products={items} setIsSubmitOrder={setIsSubmitOrder} />
       ) : (
