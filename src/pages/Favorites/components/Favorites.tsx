@@ -1,7 +1,7 @@
 /* eslint-disable import/order */
 import { FC } from 'react';
 import FavoritesItem from './FavoritesItem';
-import '../favorites.css';
+import '../favorites.module.scss';
 import { FavProducts } from '../../../redux/Favorites/favorites.types';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/Language/store';

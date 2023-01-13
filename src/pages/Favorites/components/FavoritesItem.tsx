@@ -5,7 +5,7 @@
 import { FC } from 'react';
 import { ShoppingCartIcon, StarIcon, TrashIcon } from '@heroicons/react/outline';
 import useActions from '../../../redux/hooks/useActions';
-import '../favorites.css';
+import '../favorites.module.scss';
 import { addToCartProduct } from '../../../redux/cart/cart.slice';
 import { Card } from 'react-bootstrap';
 import { useThemeHook } from '../../../ThemeContext/ThemeProvider';
