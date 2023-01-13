@@ -14,5 +14,14 @@
     "Total": "Gesamt",
     "Submit Order": "Bestellung Abschicken",
     "Quantity": "Menge",
-    "Favorites is empty": "Favoriten ist leer"
+    "Favorites is empty": "Favoriten ist leer",
+    "sort by": "sortieren nach",
+    "price (lowest)": "preis (niedrigster)",
+    "price (highest)": "preis (höchster)",
+    "rating (lowest)": "bewertung (niedrigste)",
+    "rating (highest)": "bewertung (höchste)",
+    "products found": "produkte gefunden",
+    "Cart" : "Wagen",
+    "Add to Favorites": "Zu den Favoriten hinzufügen",
+    "Explanation": "Erläuterung"
   }

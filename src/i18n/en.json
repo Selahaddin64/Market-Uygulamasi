@@ -14,5 +14,14 @@
     "Total": "Total",
     "Submit Order": "Submit Order",
     "Quantity": "Quantity",
-    "Favorites is empty": "Favorites is empty"
+    "Favorites is empty": "Favorites is empty",
+    "sort by": "sort by",
+    "price (lowest)": "price (lowest)",
+    "price (highest)": "price (highest)",
+    "rating (lowest)": "rating (lowest)",
+    "rating (highest)": "rating (highest)",
+    "products found": "products found",
+    "Cart" : "Cart",
+    "Add to Favorites": "Add to Favorites",
+    "Explanation": "Explanation"
   }

@@ -1,5 +1,5 @@
 {
-    "No products found": "Sayfa bulunamadı",
+    "No products found": "Ürün bulunamadı",
     "Search Products": "Ürünleri Bul",
     "Products": "Ürünler",
     "Favorites": "Favoriler",
@@ -14,5 +14,14 @@
     "Total": "Toplam",
     "Submit Order": "Siparişi Gönder",
     "Quantity": "Miktar",
-    "Favorites is empty": "Favoriler boş"
+    "Favorites is empty": "Favoriler boş",
+    "sort by": "göre sırala",
+    "price (lowest)": "fiyat (azalan)",
+    "price (highest)": "fiyat (artan)",
+    "rating (lowest)": "değerlendirme (azalan)",
+    "rating (highest)": "değerlendirme (artan)",
+    "products found": "ürün bulundu",
+    "Cart" : "Sepet",
+    "Add to Favorites": "Favorilere Ekle",
+    "Explanation": "Açıklama"
   }
