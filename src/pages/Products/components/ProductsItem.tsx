@@ -6,7 +6,7 @@ import '../products.css';
 import useActions from '../../../redux/hooks/useActions';
 import { formatCurrency } from '../../../utilities/formatCurrency';
 import { useDispatch } from 'react-redux';
-import { addToLiked } from '../../../redux/Favorites/likedSlice';
+import { addToFavorited } from '../../../redux/Favorites/favoritedSlice';
 import { Card } from 'react-bootstrap';
 import { useThemeHook } from '../../../ThemeContext/ThemeProvider';
 
@@ -28,7 +28,7 @@ const ProductItem: FC<Product> = ({ id, title, price, rating, thumbnail }) => {
       },
     };
 
-    dispatch(addToLiked(favProduct));
+    dispatch(addToFavorited(favProduct));
   };
 
   const addToCartHandler = (productId: number) => {

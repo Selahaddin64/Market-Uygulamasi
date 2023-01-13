@@ -17,7 +17,7 @@ const Favorites: FC<ICartProps> = ({ products }) => {
   if (!products.length) return <p>{translate('Favorites is empty', language)}</p>;
 
   return (
-    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-32'>
+    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
       {products.map(favProduct => (
         <FavoritesItem key={favProduct.id} {...favProduct} />
       ))}

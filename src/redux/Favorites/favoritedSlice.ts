@@ -61,7 +61,7 @@ export const favoritedSlice = createSlice({
 export const { addToFavorited, removeFromFavorited, clearFavorites } = favoritedSlice.actions;
 
 // Selectors -> retrieving items in state to use in different components
-export const selectFavotitedItems = (state: RootState) => state.favorited.items;
+export const selectFavoritedItems = (state: RootState) => state.favorited.items;
 export const selectFavoritedItemsWithId = (state: RootState, id: number) => {
   state.favorited.items.filter((item: FavProducts) => item.id === id);
 };

@@ -23,8 +23,8 @@ const Cart: FC<ICartProps> = ({ products, setIsSubmitOrder }) => {
   if (!products.length) return <h3 className={`${theme ? 'bg-dark-primary text-black' : 'bg-light-primary'} mt-32 flex justify-center`}>{translate('Cart is empty', language)}</h3>;
 
   return (
-    <main className='page mt-32'>
-      <section className={`${theme ? 'bg-light-black text-light' : 'bg-lihgt text-black'} shopping-cart dark`}>
+    <main className='page'>
+      <section className={`${theme ? 'bg-black text-dark-primary' : 'bg-light text-light-primary'} shopping-cart dark`}>
         <div className='container'>
           <div className={`${theme ? 'bg-light-black text-light' : 'bg-lihgt text-black'} content`}>
             <div className='row'>
