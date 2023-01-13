@@ -4,6 +4,7 @@
 /* eslint-disable import/order */
 import { FC } from 'react';
 import { CartProducts } from '../../../redux/cart/cart.types';
+import { TrashIcon } from '@heroicons/react/outline';
 import useActions from '../../../redux/hooks/useActions';
 import RemoveFromCartBtn from './RemoveFromCartBtn';
 import '../cart.css';
@@ -61,11 +62,11 @@ const CartItem: FC<CartProducts> = ({ product: { price, thumbnail, title }, quan
                   <RemoveFromCartBtn id={id}>-</RemoveFromCartBtn>
                 </div>
                 <div className='col-md-2 quantity pt-6'>
-                  <label className={`${theme ? 'bg-dark-primary text-black' : 'bg-light-primary'}`} htmlFor='quantity'>{translate('Quantity', language)}:</label>
+                  <label className={`${theme ? 'bg-black text-dark-primary' : 'bg-light text-light-primary'}`} htmlFor='quantity'>{translate('Quantity', language)}:</label>
                   <input
                     id='quantity'
                     type='number'
-                    className='form-control w-12'
+                    className={`${theme ? 'bg-light-black text-light' : 'bg-light text-black'} form-control w-12`}
                     placeholder={quantity.toString()}
                   />
                 </div>
@@ -78,13 +79,42 @@ const CartItem: FC<CartProducts> = ({ product: { price, thumbnail, title }, quan
                     +
                   </button>
                 </div>
-                <div className='col-md-1 pt-10'>
+                <div className='col-md-1 pt-12'>
                   <button
                     className='btn btn-danger ml-10%'
-                    onClick={() => deleteCartItem(id)}
+                    data-toggle='modal'
+                    data-target='#exampleModal'
                   >
-                    Remove Item
+                    <TrashIcon className='h-6 w-6' />
                   </button>
+                  {/* <!-- Modal --> */}
+                  <div
+                    className='modal fade'
+                    id='exampleModal'
+                    role='dialog'
+                    aria-labelledby='exampleModalLabel'
+                    aria-hidden='true'
+                  >
+                    <div className='modal-dialog' role='document'>
+                      <div className='modal-content'>
+                        <div className='modal-header'>
+                          <h5 className='modal-title' id='exampleModalLabel'>{translate('Explanation', language)}</h5>
+                          <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span>
+                          </button>
+                        </div>
+                        <div className='modal-body'>
+                          ...
+                        </div>
+                        <div className='modal-footer'>
+                          <button type='button' className='btn btn-secondary' data-dismiss='modal' onClick={() => deleteCartItem(id)}>
+                            <TrashIcon className='h-6 w-6' />
+                          </button>
+                          <button type='button' className='btn btn-primary'>{translate('Add to Favorites', language)}</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
