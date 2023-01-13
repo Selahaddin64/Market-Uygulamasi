@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { RootState } from '../redux/Language/store';
 import { setLanguage } from '../redux/Language/langActions';
 import { selectCartItems } from '../redux/cart/cart.slice';
-import { selectLikedItems } from '../redux/Favorites/likedSlice';
+import { selectFavoritedItems } from '../redux/Favorites/favoritedSlice';
 import { ThemeContext } from '../ThemeContext/ThemeProvider';
 
 interface HeaderProps {
@@ -20,7 +20,7 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ fixed, transparent }) => {
-  const items = useSelector(selectLikedItems);
+  const items = useSelector(selectFavoritedItems);
   const product = useSelector(selectCartItems);
 
   const { theme, setThemeMode } = useContext(ThemeContext);
